@@ -1,0 +1,5 @@
+---
+name: "ansible_local"
+action_ref: "ansible.command_local"
+formats:
+  - "ansible {{args}}"
