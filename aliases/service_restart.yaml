@@ -1,6 +1,6 @@
 # this is command alias for `actions/service_restart.yaml` action
 # allows to run ChatOps command: `service restart nginx on web`
-# eq: `/opt/stackstorm/virtualenvs/ansible/bin/ansible web --module=service --args='name=nginx state=restarted'`
+# eq: `/opt/stackstorm/virtualenvs/ansible/bin/ansible web --module-name=service --args='name=nginx state=restarted'`
 ---
 name: ansible_service_restart
 action_ref: st2-ansible-aliases.service_restart
