@@ -7,12 +7,21 @@ entry_point: ""
 enabled: true
 parameters:
   sudo:
+    description: "Run command with sudo"
+    type: boolean
     immutable: true
+    default: true
   kwarg_op:
+    description: "Lock operator type to '--'"
+    type: string
+    default: "--"
     immutable: true
   cmd:
+    description: "Command to run"
+    type: string
     immutable: true
     default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts}} --module-name=ping"
   hosts:
+    description: "Ansible hosts to ping"
     type: string
-    description: Ansible hosts to ping
+    required: true
