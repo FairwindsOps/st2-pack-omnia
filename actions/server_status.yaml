@@ -1,6 +1,6 @@
 # Make sure you have ansible inventory file `/etc/ansible/hosts`
 ---
-name: ping
+name: server_status
 description: Show server status by running ansible ping ad-hoc command
 runner_type: local-shell-cmd
 entry_point: ""
