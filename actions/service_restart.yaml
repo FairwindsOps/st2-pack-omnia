@@ -20,12 +20,12 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts}} --module-name=service --args='name={{service-name}} state=restarted'"
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts}} --module-name=service --args='name={{service_name}} state=restarted'"
   hosts:
     description: "Ansible hosts to ping"
     type: string
     required: true
-  service-name:
+  service_name:
     description: "Service to restart"
     type: string
     required: true

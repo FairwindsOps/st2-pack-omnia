@@ -6,4 +6,4 @@ name: ansible_service_restart
 action_ref: st2-ansible-aliases.service_restart
 description: Restart service on remote hosts
 formats:
-  - "service restart {{service-name}} on {{hosts}}"
+  - "service restart {{service_name}} on {{hosts}}"
