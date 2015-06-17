@@ -3,7 +3,7 @@
 # eq: cowsay "Holy ChatOps Cow!"
 ---
 name: cowsay
-action_ref: st2-ansible-aliases.cowsay
+action_ref: st2-chatops-aliases.cowsay
 description: Draws a cow that says what you want
 formats:
   - "cowsay {{message}}"
