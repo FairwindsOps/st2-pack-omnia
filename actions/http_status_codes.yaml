@@ -14,7 +14,7 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible chatops -m shell -a \"awk '{print \$9}' /var/log/nginx/access.log|sort |uniq -c |sort -k1,1nr 2>/dev/null|column -t\""
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible chatops -m shell -a \"awk '{print \\$9}' /var/log/nginx/access.log|sort |uniq -c |sort -k1,1nr 2>/dev/null|column -t\""
   hosts:
     description: "Ansible hosts"
     type: string
