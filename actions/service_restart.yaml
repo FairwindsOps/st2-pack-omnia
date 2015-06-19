@@ -12,9 +12,6 @@ parameters:
     immutable: true
     default: true
   kwarg_op:
-    description: "Lock operator type to '--'"
-    type: string
-    default: "--"
     immutable: true
   cmd:
     description: "Command to run"
