@@ -1,0 +1,30 @@
+---
+name: update_package
+description: Update package on remote hosts
+runner_type: local-shell-cmd
+entry_point: ""
+enabled: true
+parameters:
+  sudo:
+    description: "Run command with sudo"
+    type: boolean
+    immutable: true
+    default: true
+  kwarg_op:
+    description: "Lock operator type to '--'"
+    type: string
+    default: "--"
+    immutable: true
+  cmd:
+    description: "Command to run"
+    type: string
+    immutable: true
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible-playbook ansible/update_package.yaml --extra-vars='hosts={{ hosts }} package={{ package }}'"
+  hosts:
+    description: "Ansible hosts"
+    type: string
+    required: true
+  package:
+    description: "Package to upgrade"
+    type: string
+    required: true

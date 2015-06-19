@@ -1,0 +1,13 @@
+---
+- name: Update package on remote hosts, run on 25% of servers at a time
+  hosts: {{ hosts }}
+  serial: "25%"
+  sudo: yes
+  tasks:
+    - name: Update Package (Debian)
+      apt: name={{ package }} state=latest update_cache=yes
+      when: ansible_os_family == "Debian"
+
+    - name: Update Package (RedHat)
+      yum: name={{ package }} state=latest update_cache=yes
+      when: ansible_os_family == "RedHat"

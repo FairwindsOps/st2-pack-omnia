@@ -1,4 +1,3 @@
-# Make sure you have ansible inventory file `/etc/ansible/hosts`
 ---
 name: cowsay
 description: Draws a cow that says what you want
