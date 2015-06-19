@@ -1,6 +1,6 @@
 ---
-name: package_version
-description: Show installed package version on hosts
+name: http_status_codes
+description: Show sorted http status codes from nginx logs
 runner_type: local-shell-cmd
 entry_point: ""
 enabled: true
@@ -14,12 +14,8 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{ hosts }} -m shell -a \"dpkg -s {{ package }} | grep 'Version' | sed 's/^Version: //'\""
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible chatops -m shell -a \"awk '{print \$9}' /var/log/nginx/access.log|sort |uniq -c |sort -k1,1nr 2>/dev/null|column -t\""
   hosts:
     description: "Ansible hosts"
-    type: string
-    required: true
-  package:
-    description: "Package name"
     type: string
     required: true
