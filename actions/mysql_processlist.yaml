@@ -14,7 +14,7 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{ hosts }} --become --become-user=root -m shell -a \"mysql --execute='SHOW PROCESSLIST;'\""
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{ hosts }} --become --become-user=root -m shell -a \"mysql --execute='SHOW PROCESSLIST;' | expand -t 10\""
   hosts:
     description: "Ansible hosts"
     type: string
