@@ -10,9 +10,10 @@ parameters:
     default: true
   kwarg_op:
     immutable: true
+  timeout:
+    default: 0
   cmd:
     description: "Command to run"
-    type: string
     immutable: true
     default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible-playbook /opt/stackstorm/packs/${ST2_ACTION_PACK_NAME}/ansible/update_package.yaml --extra-vars='hosts={{ hosts }} package={{ package }}'"
   hosts:
