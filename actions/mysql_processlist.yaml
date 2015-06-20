@@ -1,6 +1,6 @@
 ---
-name: http_status_codes
-description: Show sorted http status codes from nginx logs
+name: mysql_processlist
+description: Show MySQL processlist
 runner_type: local-shell-cmd
 entry_point: ""
 enabled: true
@@ -14,8 +14,8 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{ hosts }} -m shell -a \"awk '{print \\$9}' /var/log/nginx/access.log|sort |uniq -c |sort -k1,1nr 2>/dev/null|column -t\""
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{ hosts }} --become --become-user=root -m shell -a \"mysql --execute='SHOW PROCESSLIST;'\""
   hosts:
     description: "Ansible hosts"
     type: string
-    required: true
+    default: db
