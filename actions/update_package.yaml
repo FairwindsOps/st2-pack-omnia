@@ -11,7 +11,7 @@ parameters:
   kwarg_op:
     immutable: true
   timeout:
-    default: 0
+    default: 6000
   cmd:
     description: "Command to run"
     immutable: true
