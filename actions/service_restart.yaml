@@ -19,7 +19,7 @@ parameters:
     immutable: true
     default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts}} --become --module-name=service --args='name={{service_name}} state=restarted'"
   hosts:
-    description: "Ansible hosts to ping"
+    description: "Ansible hosts"
     type: string
     required: true
   service_name:
