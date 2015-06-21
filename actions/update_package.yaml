@@ -16,7 +16,7 @@ parameters:
   cmd:
     description: "Command to run"
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible-playbook /opt/stackstorm/packs/${ST2_ACTION_PACK_NAME}/ansible/update_package.yaml --extra-vars='hosts={{ hosts }} package={{ package }}'"
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible-playbook /opt/stackstorm/packs/${ST2_ACTION_PACK_NAME}/playbooks/update_package.yaml --extra-vars='hosts={{ hosts }} package={{ package }}'"
   hosts:
     description: "Ansible hosts"
     type: string
