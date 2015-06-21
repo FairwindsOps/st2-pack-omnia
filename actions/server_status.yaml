@@ -17,7 +17,7 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts}} --module-name=ping"
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{ hosts }} --module-name=ping"
   hosts:
     description: "Ansible hosts to ping"
     type: string
