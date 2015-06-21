@@ -1,4 +1,4 @@
-# Make sure you have ansible inventory file `/etc/ansible/hosts`
+# Make sure you have ansible inventory file `/etc/ansible/hosts` configured
 ---
 name: service_restart
 description: Restart service on remote hosts

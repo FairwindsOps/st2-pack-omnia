@@ -1,3 +1,4 @@
+# Make sure you have ansible inventory file `/etc/ansible/hosts` configured
 ---
 name: mysql_processlist
 description: Show MySQL processlist
