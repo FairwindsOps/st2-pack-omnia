@@ -1,6 +1,6 @@
 [![StackStorm](https://github.com/stackstorm/st2/raw/master/stackstorm_logo.png)](http://www.stackstorm.com)
-# ChatOps with Ansible StackStorm pack
-This is unofficial [StackStorm](http://stackstorm.com/) pack with [`Actions`](actions/) and [`Action Aliases`](aliases/) allowing you to run [Ansible ad-hoc commands](http://docs.ansible.com/intro_adhoc.html) and [Ansible Playbooks](http://docs.ansible.com/playbooks.html) as ChatOps commands.
+# ChatOps & Ansible integration pack
+This is unofficial [StackStorm](http://stackstorm.com/) pack with some real world [`Actions`](actions/) and [`Action Aliases`](aliases/) allowing you to run [Ansible ad-hoc commands](http://docs.ansible.com/intro_adhoc.html) and [Ansible Playbooks](http://docs.ansible.com/playbooks.html) as ChatOps commands.
 
 For complete Vagrant demo, see [showcase-ansible-chatops](https://github.com/armab/showcase-ansible-chatops) repo.
 
@@ -16,7 +16,7 @@ st2 run packs.install packs=st2-chatops-aliases repo_url=armab/st2-chatops-alias
 ```
 
 ## Available ChatOps commands
-Full list of available commands (with real use case screenshots):
+Full list of available commands (with real use case Slack screenshots):
 * [`!ansible {{args}}`](http://i.imgur.com/pk3xouo.png) - Run ansible command on local machine
 * [`!status {{hosts}}`](http://i.imgur.com/fak6ZP7.png) - Show status for hosts (ansible ping module)
 * [`!show nginx stats on {{hosts}}`](http://i.imgur.com/Sc5wm7m.png) - Show sorted http status codes from nginx on hosts
