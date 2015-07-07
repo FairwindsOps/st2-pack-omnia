@@ -15,7 +15,7 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{ hosts }} -m shell -a \"dpkg -s {{ package }} | grep 'Version' | sed 's/^Version: //'\""
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts|replace('http://','')}} -m shell -a \"dpkg -s {{ package }} | grep 'Version' | sed 's/^Version: //'\""
   hosts:
     description: "Ansible hosts"
     type: string

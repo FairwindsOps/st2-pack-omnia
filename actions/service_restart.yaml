@@ -17,7 +17,7 @@ parameters:
     description: "Command to run"
     type: string
     immutable: true
-    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts}} --become --module-name=service --args='name={{service_name}} state=restarted'"
+    default: "/opt/stackstorm/virtualenvs/ansible/bin/ansible {{hosts|replace('http://','')}} --become --module-name=service --args='name={{service_name}} state=restarted'"
   hosts:
     description: "Ansible hosts"
     type: string
