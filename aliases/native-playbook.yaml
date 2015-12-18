@@ -1,0 +1,15 @@
+---
+name: "chatops.native_playbook"
+action_ref: "st2-chatops-aliases.omnia_playbook"
+description: "Run ansible.playbook"
+formats:
+  - "native {{playbook}}"
+
+
+
+
+
+
+
+
+  
