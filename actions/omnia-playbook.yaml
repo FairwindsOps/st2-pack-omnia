@@ -5,6 +5,8 @@ runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
 parameters:
+  env:
+    ANSIBLE_CONFIG: "/opt/omnia/infrastructure/remote_ansible.cfg"
   kwarg_op:
     description: "Lock operator type to '--'"
     type: string
@@ -18,10 +20,6 @@ parameters:
   cwd:
     description: "Working directory where the command will be executed in"
     type: string
-  # roles_path:
-  #   description: "roles path"
-  #   type: string
-  #   default: "/opt/omnia/gmr-infrastructure/roles/"
   timeout:
     description: "Action timeout in seconds. Action will get killed if it doesn't finish in timeout seconds"
     type: integer
