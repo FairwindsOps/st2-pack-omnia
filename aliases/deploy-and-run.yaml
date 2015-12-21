@@ -1,0 +1,6 @@
+---
+name: "chatops.deploy_and_run"
+action_ref: "st2-chatops-aliases.deploy_and_run_task"
+description: "Deploys infrastructure repo then runs a task from /tasks"
+formats:
+  - "deplpy and run task {{playbook}}"
