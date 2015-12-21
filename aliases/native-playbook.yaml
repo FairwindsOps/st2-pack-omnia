@@ -1,15 +1,6 @@
 ---
-name: "chatops.native_playbook"
+name: "chatops.run_infrastructure_tasks"
 action_ref: "st2-chatops-aliases.omnia_playbook"
-description: "Run ansible.playbook"
+description: "Run tasks from infrastructure repository"
 formats:
-  - "native {{playbook}}"
-
-
-
-
-
-
-
-
-  
+  - "run task {{playbook}}"
