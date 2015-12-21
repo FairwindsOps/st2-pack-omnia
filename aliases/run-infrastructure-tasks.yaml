@@ -1,0 +1,6 @@
+---
+name: "chatops.run_infrastructure_tasks"
+action_ref: "st2-chatops-aliases.run_infrastructure_tasks"
+description: "Run tasks from infrastructure repository. eg. run task test-slack.yml"
+formats:
+  - "run task {{playbook}}"

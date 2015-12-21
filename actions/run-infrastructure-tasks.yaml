@@ -8,6 +8,15 @@ parameters:
   env:
     default:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+  cwd:
+    description: "Working directory where the command will be executed in"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+  inventory_file:
+    description: "Inventory host file (default=/etc/ansible/hosts) [-i]"
+    type: string
+    default: /opt/omnia/plugins/inventory
   kwarg_op:
     description: "Lock operator type to '--'"
     type: string
@@ -17,11 +26,6 @@ parameters:
     description: "Lock sudo, the behavior is controlled by ansible 'become_' options"
     type: boolean
     default: true
-    immutable: true
-  cwd:
-    description: "Working directory where the command will be executed in"
-    type: string
-    default: "/opt/omnia/infrastructure/tasks"
     immutable: true
   timeout:
     description: "Action timeout in seconds. Action will get killed if it doesn't finish in timeout seconds"
@@ -74,10 +78,6 @@ parameters:
   help:
     description: "Show help message and exit [-h]"
     type: boolean
-  inventory_file:
-    description: "Inventory host file (default=/etc/ansible/hosts) [-i]"
-    type: string
-    default: /opt/omnia/plugins/inventory
   limit:
     description: "Further limit selected hosts to an additional pattern [-l]"
     type: string
