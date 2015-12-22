@@ -1,6 +1,6 @@
 ---
-name: "omnia_playbook"
-description: "Run ansible playbook with omnia dynamic inventory"
+name: "run_task"
+description: "Run a task from /tasks"
 runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
@@ -8,6 +8,19 @@ parameters:
   env:
     default:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+  cwd:
+    description: "Working directory where the command will be executed in"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+  playbook:
+    description: "Playbook file"
+    type: string
+    position: 0
+  inventory_file:
+    description: "Inventory host file (default=/etc/ansible/hosts) [-i]"
+    type: string
+    default: /opt/omnia/plugins/inventory
   kwarg_op:
     description: "Lock operator type to '--'"
     type: string
@@ -18,17 +31,10 @@ parameters:
     type: boolean
     default: true
     immutable: true
-  cwd:
-    description: "Working directory where the command will be executed in"
-    type: string
   timeout:
     description: "Action timeout in seconds. Action will get killed if it doesn't finish in timeout seconds"
     type: integer
     default: 900
-  playbook:
-    description: "Playbook file"
-    type: string
-    position: 0
   background:
     description: "Fork in Background asynchronously for X seconds [-B]"
     type: integer
@@ -72,10 +78,6 @@ parameters:
   help:
     description: "Show help message and exit [-h]"
     type: boolean
-  inventory_file:
-    description: "Inventory host file (default=/etc/ansible/hosts) [-i]"
-    type: string
-    default: /opt/omnia/plugins/inventory
   limit:
     description: "Further limit selected hosts to an additional pattern [-l]"
     type: string

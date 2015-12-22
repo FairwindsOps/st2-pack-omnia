@@ -1,22 +1,21 @@
 ---
-name: "deploy_and_run_task"
-runner_type: "action-chain"
-description: "Deploys infrastructure repo then runs a task from /tasks"
+name: "run_playbook"
+description: "Runs arbitrary ansible playbooks"
+runner_type: "local-shell-script"
+entry_point: "ansible_playbook.py"
 enabled: true
-entry_point: "workflows/deploy_and_run.yaml"
 parameters:
   env:
     default:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
-  cwd:
-    description: "Working directory where the command will be executed in"
-    type: string
-    default: "/opt/omnia/infrastructure/tasks"
-    immutable: true
   inventory_file:
     description: "Inventory host file (default=/etc/ansible/hosts) [-i]"
     type: string
-    default: /opt/omnia/plugins/inventory
+    default: "/opt/omnia/plugins/inventory"
+  playbook:
+    description: "Playbook file"
+    type: string
+    position: 0
   kwarg_op:
     description: "Lock operator type to '--'"
     type: string
@@ -27,14 +26,13 @@ parameters:
     type: boolean
     default: true
     immutable: true
+  cwd:
+    description: "Working directory where the command will be executed in"
+    type: string
   timeout:
     description: "Action timeout in seconds. Action will get killed if it doesn't finish in timeout seconds"
     type: integer
     default: 900
-  playbook:
-    description: "Playbook file"
-    type: string
-    position: 0
   background:
     description: "Fork in Background asynchronously for X seconds [-B]"
     type: integer

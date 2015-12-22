@@ -1,9 +1,9 @@
 ---
-name: "run_infrastructure_tasks"
-description: "Run infrastructure tasks"
-runner_type: "local-shell-script"
-entry_point: "ansible_playbook.py"
+name: "deploy_and_run_task"
+runner_type: "action-chain"
+description: "Deploys infrastructure repo then runs a task from /tasks"
 enabled: true
+entry_point: "workflows/deploy_and_run_task.yaml"
 parameters:
   env:
     default:

@@ -1,0 +1,6 @@
+---
+name: "chatops.run_playbook"
+action_ref: "st2-chatops-aliases.run_playbook"
+description: "Run tasks from infrastructure repository"
+formats:
+  - "run playbook {{playbook}}"
