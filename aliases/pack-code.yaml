@@ -1,7 +1,0 @@
----
-name: "pack_code"
-action_ref: "st2-chatops-aliases.pack_code"
-description: "Pack code"
-formats:
-  - pack code stack {{ stack }} layer {{ layer }} version {{ version }}
-  - pack code stack {{ stack }} layer {{ layer }} version {{ version }} repo {{ repo }}
