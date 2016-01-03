@@ -13,4 +13,4 @@ parameters:
   cmd:
     description: "Command to run"
     immutable: true
-    default: "ansible-galaxy -r install --force /opt/omnia/infrastructure/ansible-requirements.yml"
+    default: "ansible-galaxy install --force  -r /opt/omnia/infrastructure/ansible-requirements.yml"
