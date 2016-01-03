@@ -1,6 +1,0 @@
----
-name: "chatops.deploy_and_run_task"
-action_ref: "st2-chatops-aliases.deploy_and_run_task"
-description: "A workflow that deploys the infrastructure repository, then runs a task from /tasks"
-formats:
-  - "deploy and run task {{playbook}}"

@@ -1,6 +1,0 @@
----
-name: "chatops.run_task"
-action_ref: "st2-chatops-aliases.run_task"
-description: "Run a task from /tasks. eg. run task test-slack.yml"
-formats:
-  - "run task {{playbook}}"
