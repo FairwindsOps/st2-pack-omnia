@@ -34,3 +34,8 @@ parameters:
     required: true
     position: 2
 
+  timeout:
+    description: "timeout"
+    type: integer
+    # 20 minutes
+    default: 1200
