@@ -1,0 +1,6 @@
+---
+name: "run_task_stack_layer_version_repo"
+action_ref: "st2-chatops-aliases.run_task_stack_layer_version_repo"
+description: "Pack code"
+formats:
+  - run task {{ playbook }} stack {{ stack }} layer {{ layer }} version {{ version }} repo {{ repo }}
