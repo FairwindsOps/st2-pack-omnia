@@ -1,0 +1,49 @@
+---
+
+name: "run_task_with_stack_layer"
+description:  "Run Omnia tasks with extra_vars 'stack' and 'layer' set"
+runner_type: "local-shell-script"
+entry_point: ""
+enabled: true
+parameters:
+  env:
+    default:
+      ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+
+  cmd:
+    description: "Command to run"
+    immutable: true
+    # default: "ansible-playbook --connection=local -i {{inventory_file}} {{playbook}} --extra-vars='stack={{stack}} layer={{layer}}' | tail -2 | head -1"
+    default: "ansible-playbook --connection=local -i /opt/omnia/plugins/inventory test-slack.yml --extra-vars='stack=foo  layer=baz' | tail -2 | head -1"
+
+  cwd:
+    description: "Working directory where the command will be executed in eg. chdir"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+
+  playbook:
+    description: "Playbook file"
+    type: string
+    required: true
+    default: "a"
+
+  stack:
+    description: "stack"
+    type: string
+    default: "b"
+    required: true
+
+  layer:
+    description: "layer"
+    type: string
+    required: true
+    default: "c"
+
+  inventory_file:
+    description: "Ansible inventory"
+    type: string
+    default: "/opt/omnia/plugins/inventory"
+    immutable: true
+
+

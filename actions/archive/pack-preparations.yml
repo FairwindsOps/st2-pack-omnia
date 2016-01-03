@@ -1,0 +1,45 @@
+---
+
+name: "run_task_with_stack_layer"
+description:  "run_task_with_stack_layer"
+runner_type: "local-shell-cmd"
+enabled: true
+parameters:
+  env:
+    default:
+      ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+
+  cmd:
+    description: "Command to run"
+    immutable: true
+    default: "ansible-playbook -i {{inventory_file}} {{playbook}} --extra-vars='stack={{stack}} layer={{layer}}'"
+
+  cwd:
+    description: "Working directory where the command will be executed in eg. chdir"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+
+  playbook:
+    description: "Playbook file"
+#    default: "1-pack-preparations.yml"
+    type: string
+    required: true
+
+  stack:
+    description: "stack"
+    type: string
+    required: true
+
+  layer:
+    description: "layer"
+    type: string
+    required: true
+
+  inventory_file:
+    description: "Inventory host file (default=/etc/ansible/hosts) [-i]"
+    type: string
+    default: /opt/omnia/plugins/inventory
+    immutable: true
+
+
