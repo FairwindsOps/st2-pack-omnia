@@ -1,7 +1,7 @@
 ---
 
-name: "run_task"
-description:  "Run Omnia tasks"
+name: "run_task_with_stack_layer"
+description:  "Run playbooks in /tasks with 'stack' and 'layer' set"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-playbook.sh"
 enabled: true
@@ -22,8 +22,15 @@ parameters:
     required: true
     position: 0
 
-  timeout:
-    description: "timeout"
-    type: integer
-    # 20 minutes
-    default: 1200
+  stack:
+    type: string
+    description: "stack"
+    required: true
+    position: 1
+
+  layer:
+    type: string
+    description: "layer"
+    required: true
+    position: 2
+
