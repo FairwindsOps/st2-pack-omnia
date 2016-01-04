@@ -6,4 +6,4 @@ LAYER=$3
 VERSION=$4
 REPO=$5
 
-ansible-playbook --connection=local -i /opt/omnia/plugins/inventory $PLAYBOOK -e stack=$STACK -e layer=$LAYER -e version=$VERSION -e app_repo=$REPO 
+ansible-playbook --connection=local -i /opt/omnia/infrastructure/plugins/inventory $PLAYBOOK -e stack=$STACK -e layer=$LAYER -e version=$VERSION -e app_repo=$REPO 
