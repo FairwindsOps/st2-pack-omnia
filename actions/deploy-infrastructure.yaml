@@ -13,7 +13,7 @@ parameters:
   cmd:
     description: "Command to run"
     immutable: true
-    default: "ansible-playbook --connection=local -i /opt/omnia/plugins/inventory deploy-infrastructure-repo.yml"
+    default: "ansible-playbook --connection=local -i /opt/omnia/infrastructure/plugins/inventory deploy-infrastructure-repo.yml"
 
   cwd:
     description: "Working directory where the command will be executed in eg. chdir"
