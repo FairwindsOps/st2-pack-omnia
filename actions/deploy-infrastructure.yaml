@@ -1,7 +1,7 @@
 ---
 
 name: "deploy_infrastructure"
-description:  "Run Omnia tasks"
+description:  "Deploy latest version of infrastructure repository"
 runner_type: "local-shell-cmd"
 enabled: true
 parameters:
