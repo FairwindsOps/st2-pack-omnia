@@ -19,7 +19,7 @@ parameters:
   playbook:
     type: string
     description: "playbook file"
-    required: true
+    immutable: true
     default: "0-pack-base.yml"
     position: 0
 
