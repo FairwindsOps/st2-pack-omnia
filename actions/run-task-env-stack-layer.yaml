@@ -3,12 +3,13 @@
 name: "run_task_with_env_stack_layer"
 description:  "Run playbooks in /tasks with 'env', 'stack' and 'layer' set"
 runner_type: "local-shell-script"
-entry_point: "lib/ansible-playbook.sh"
+entry_point: "lib/ansible-env-stack-layer.sh"
 enabled: true
 parameters:
   env:
     default:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
 
   cwd:
     description: "Working directory where the command will be executed in eg. chdir"
