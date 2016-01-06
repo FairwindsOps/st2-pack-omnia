@@ -46,8 +46,8 @@ parameters:
     required: true
     position: 3
 
-  repo:
+  app_repo:
     type: string
-    description: "repo"
+    description: "app_repo"
     required: true
     position: 4
