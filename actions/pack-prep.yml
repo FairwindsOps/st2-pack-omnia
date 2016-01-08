@@ -1,7 +1,7 @@
 ---
 
 name: "pack_prep"
-description:  "Prep base AMI for application"
+description:  "Prep Base AMI for Application"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-playbook-prep.sh"
 enabled: true

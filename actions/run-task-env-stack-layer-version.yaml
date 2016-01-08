@@ -1,7 +1,7 @@
 ---
 
 name: "run_task_stack_layer_version_repo"
-description:  "run_task_env_stack_layer_version"
+description:  "Run Omnia Playbooks With Specific Branch or SHA"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-env-stack-layer-version.sh"
 enabled: true

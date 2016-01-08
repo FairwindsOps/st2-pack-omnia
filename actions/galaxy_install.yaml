@@ -1,7 +1,7 @@
 ---
 
 name: "galaxy_install"
-description:  "Galaxy install ansible requirements"
+description:  "Galaxy Install Ansible Requirements"
 runner_type: "local-shell-cmd"
 enabled: true
 parameters:
@@ -11,7 +11,7 @@ parameters:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
       AWS_DEFAULT_REGION: "us-east-1"
     immutable: true
-    
+
   cmd:
     description: "Command to run"
     immutable: true

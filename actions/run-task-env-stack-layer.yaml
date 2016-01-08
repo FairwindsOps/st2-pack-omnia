@@ -1,7 +1,7 @@
 ---
 
 name: "run_task_with_env_stack_layer"
-description:  "Run playbooks in /tasks with 'env', 'stack' and 'layer' set"
+description:  "Run Omnia Env/Stack Specific Tasks "
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-env-stack-layer.sh"
 enabled: true

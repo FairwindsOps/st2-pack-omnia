@@ -1,7 +1,7 @@
 ---
 
 name: "run_task"
-description:  "Run Omnia tasks"
+description:  "Run Omnia Tasks"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-playbook.sh"
 enabled: true
