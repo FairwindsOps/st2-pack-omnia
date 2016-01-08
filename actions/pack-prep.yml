@@ -1,14 +1,17 @@
 ---
 
-name: "run_task_with_stack_layer"
-description:  "Run playbooks in /tasks with 'stack' and 'layer' set"
+name: "pack_prep"
+description:  "Prep base AMI for application"
 runner_type: "local-shell-script"
-entry_point: "lib/ansible-playbook.sh"
+entry_point: "lib/ansible-playbook-prep.sh"
 enabled: true
 parameters:
   env:
+    description: "working environment for ansible run"
     default:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
+    immutable: true
 
   cwd:
     description: "Working directory where the command will be executed in eg. chdir"
@@ -19,20 +22,18 @@ parameters:
   playbook:
     type: string
     description: "playbook file"
-    required: true
+    immutable: true
+    default: "1-pack-prep.yml"
     position: 0
 
-  stack:
+  app_type:
+    description: "target application type"
     type: string
-    description: "stack"
     required: true
+    enum:
+      - "node"
+      - "rails"
     position: 1
-
-  layer:
-    type: string
-    description: "layer"
-    required: true
-    position: 2
 
   timeout:
     description: "timeout"

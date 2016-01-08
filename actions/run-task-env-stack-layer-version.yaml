@@ -1,9 +1,9 @@
 ---
 
-name: "run_task_with_env_stack_layer"
-description:  "Run playbooks in /tasks with 'env', 'stack' and 'layer' set"
+name: "run_task_stack_layer_version_repo"
+description:  "run_task_env_stack_layer_version"
 runner_type: "local-shell-script"
-entry_point: "lib/ansible-env-stack-layer.sh"
+entry_point: "lib/ansible-env-stack-layer-version.sh"
 enabled: true
 parameters:
   env:
@@ -14,7 +14,7 @@ parameters:
     immutable: true
 
   cwd:
-    description: "working directory where the command will be executed in eg. chdir"
+    description: "Working directory where the command will be executed in eg. chdir"
     type: string
     default: "/opt/omnia/infrastructure/tasks"
     immutable: true
@@ -47,10 +47,16 @@ parameters:
     position: 2
 
   layer:
-    description: "target stack layer"
     type: string
+    description: "target stack layer"
     required: true
     position: 3
+
+  version:
+    type: string
+    description: "target version"
+    required: true
+    position: 4
 
   timeout:
     description: "timeout"

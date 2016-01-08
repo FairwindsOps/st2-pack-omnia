@@ -7,8 +7,11 @@ entry_point: "lib/ansible-playbook.sh"
 enabled: true
 parameters:
   env:
+    description: "working environment for ansible run"
     default:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
+    immutable: true
 
   cwd:
     description: "Working directory where the command will be executed in eg. chdir"
