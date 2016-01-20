@@ -26,13 +26,22 @@ parameters:
     default: "1-pack-prep.yml"
     position: 0
 
-  app_type:
-    description: "target application type"
+  engine:
+    description: "target engine"
     type: string
     required: true
     enum:
       - "node"
       - "rails"
+    position: 1
+
+  engine_version:
+    description: "target engine version"
+    type: string
+    required: true
+    enum:
+      - "0.10.40"
+      - "latest"
     position: 1
 
   timeout:
