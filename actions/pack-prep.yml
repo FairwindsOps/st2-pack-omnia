@@ -42,7 +42,7 @@ parameters:
     enum:
       - "0.10.40"
       - "latest"
-    position: 1
+    position: 2
 
   timeout:
     description: "timeout"
