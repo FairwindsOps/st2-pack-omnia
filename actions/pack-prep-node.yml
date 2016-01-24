@@ -1,0 +1,60 @@
+---
+
+name: "pack_prep_node"
+description:  "Prep Base AMI for Node Application"
+runner_type: "local-shell-script"
+entry_point: "lib/ansible-playbook-prep.sh"
+enabled: true
+parameters:
+  env:
+    description: "working environment for ansible run"
+    default:
+      ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
+    immutable: true
+
+  cwd:
+    description: "Working directory where the command will be executed in eg. chdir"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+
+  playbook:
+    type: string
+    description: "playbook file"
+    immutable: true
+    default: "1-pack-prep.yml"
+    position: 0
+
+  engine:
+    description: "target engine"
+    type: string
+    immutable: true
+    default: "node"
+    position: 1
+
+  engine_major_version:
+    description: "target engine major version"
+    type: string
+    required: true
+    enum:
+      - "0.10.x"
+      - "0.12.x"
+      - "0.4.x"
+      - "0.5.x"
+    position: 2
+
+  engine_version:
+    description: "target engine version"
+    type: string
+    required: true
+    enum:
+      - "0.10.40"
+      - "latest"
+    position: 3
+
+  timeout:
+    description: "timeout"
+    type: integer
+    # 20 minutes
+    default: 1200
