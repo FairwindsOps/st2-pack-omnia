@@ -1,7 +1,7 @@
 ---
 
-name: "galaxy_install"
-description:  "Galaxy Install Ansible Requirements"
+name: "admin_galaxy_install"
+description:  "[admin] ansible-galaxy install ansible requirements"
 runner_type: "local-shell-cmd"
 enabled: true
 parameters:

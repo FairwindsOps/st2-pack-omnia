@@ -1,7 +1,7 @@
 ---
 
-name: "run_task_with_env_stack_layer"
-description:  "Run Omnia Env/Stack Specific Tasks "
+name: "3_deploy_ami"
+description:  "[3] deploy application AMI to staging environment"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-env-stack-layer.sh"
 enabled: true
@@ -22,16 +22,15 @@ parameters:
   playbook:
     description: "ansible playbook to trigger"
     type: string
-    required: true
+    immutable: true
+    default: 3-deploy.yml
     position: 0
 
   environment:
     description: "target infrastructure environment"
     type: string
-    required: true
-    enum:
-      - "staging"
-      - "prod"
+    immutable: true
+    default: "staging"
     position: 1
 
   stack:
@@ -49,7 +48,8 @@ parameters:
   layer:
     description: "target stack layer"
     type: string
-    required: true
+    immutable: true
+    default: app
     position: 3
 
   timeout:

@@ -1,7 +1,7 @@
 ---
 
-name: "deploy_infrastructure"
-description:  "Deploy Latest Version of Infrastructure Repository"
+name: "admin_deploy_infrastructure"
+description:  "[admin] deploy latest version of infrastructure repository"
 runner_type: "local-shell-cmd"
 enabled: true
 parameters:

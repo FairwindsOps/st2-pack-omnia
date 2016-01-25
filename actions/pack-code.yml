@@ -1,7 +1,7 @@
 ---
 
-name: "pack_code"
-description:  "Pack Code onto Prepped Base AMI"
+name: "2_pack_code"
+description:  "[2] pack code onto prepped Base AMI"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-playbook-env-stack-layer.sh"
 enabled: true
@@ -29,10 +29,8 @@ parameters:
   environment:
     description: "target infrastructure environment"
     type: string
-    required: true
-    enum:
-      - "staging"
-      - "prod"
+    immutable: true
+    default: "staging"
     position: 1
 
   stack:
@@ -50,7 +48,8 @@ parameters:
   layer:
     description: "target stack layer"
     type: string
-    required: true
+    immutable: true
+    default: app
     position: 3
 
   timeout:

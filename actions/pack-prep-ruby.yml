@@ -1,7 +1,7 @@
 ---
 
-name: "pack_prep_ruby"
-description:  "Prep Base AMI for Rails Application"
+name: "1_pack_prep_ruby"
+description:  "[1] prep base AMI for rails application"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-playbook-prep.sh"
 enabled: true

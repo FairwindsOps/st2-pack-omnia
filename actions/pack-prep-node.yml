@@ -1,7 +1,7 @@
 ---
 
-name: "pack_prep_node"
-description:  "Prep Base AMI for Node Application"
+name: "1_pack_prep_node"
+description:  "[1] prep base AMI for nodejs application"
 runner_type: "local-shell-script"
 entry_point: "lib/ansible-playbook-prep.sh"
 enabled: true
