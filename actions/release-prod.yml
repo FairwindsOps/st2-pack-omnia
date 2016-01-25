@@ -1,9 +1,9 @@
 ---
 
-name: "2_pack_code"
-description:  "[2] pack code onto prepped Base AMI"
+name: "4_release_ami"
+description:  "[4] release application AMI to production environment"
 runner_type: "local-shell-script"
-entry_point: "lib/ansible-playbook-pack-code.sh"
+entry_point: "lib/ansible-playbook-release.sh"
 enabled: true
 parameters:
   env:
@@ -20,18 +20,25 @@ parameters:
     immutable: true
 
   playbook:
+    description: "ansible playbook to trigger"
     type: string
-    description: "playbook file"
     immutable: true
-    default: "2-pack-code.yml"
+    default: 4-release.yml
     position: 0
+
+  previous_environment:
+    description: "previous infrastructure environment"
+    type: string
+    immutable: true
+    default: "staging"
+    position: 1
 
   environment:
     description: "target infrastructure environment"
     type: string
     immutable: true
-    default: "staging"
-    position: 1
+    default: "prod"
+    position: 2
 
   stack:
     description: "target application stack"
@@ -43,14 +50,14 @@ parameters:
       - "boxed-smartlink"
       - "boxed-imageupload"
       - "boxed-twilio"
-    position: 2
+    position: 3
 
   layer:
     description: "target stack layer"
     type: string
     immutable: true
     default: app
-    position: 3
+    position: 4
 
   timeout:
     description: "timeout"

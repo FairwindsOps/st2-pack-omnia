@@ -3,7 +3,7 @@
 name: "3_deploy_ami"
 description:  "[3] deploy application AMI to staging environment"
 runner_type: "local-shell-script"
-entry_point: "lib/ansible-env-stack-layer.sh"
+entry_point: "lib/ansible-playbook-deploy.sh"
 enabled: true
 parameters:
   env:

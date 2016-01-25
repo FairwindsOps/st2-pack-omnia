@@ -3,7 +3,7 @@
 name: "0_pack_base"
 description:  "[0] pack base Ubuntu AMI"
 runner_type: "local-shell-script"
-entry_point: "lib/ansible-playbook.sh"
+entry_point: "lib/ansible-playbook-pack-base.sh"
 enabled: true
 parameters:
   env:
