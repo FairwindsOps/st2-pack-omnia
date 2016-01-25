@@ -1,19 +1,21 @@
 ---
 
-name: "deploy_infrastructure"
-description:  "Run Omnia tasks"
+name: "admin_deploy_infrastructure"
+description:  "[admin] deploy latest version of infrastructure repository"
 runner_type: "local-shell-cmd"
 enabled: true
 parameters:
-
   env:
+    description: "working environment for ansible run"
     default:
       ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
+    immutable: true
 
   cmd:
     description: "Command to run"
     immutable: true
-    default: "ansible-playbook --connection=local -i /opt/omnia/plugins/inventory deploy-infrastructure-repo.yml"
+    default: "ansible-playbook --connection=local -i /opt/omnia/infrastructure/plugins/inventory deploy-infrastructure-repo.yml"
 
   cwd:
     description: "Working directory where the command will be executed in eg. chdir"

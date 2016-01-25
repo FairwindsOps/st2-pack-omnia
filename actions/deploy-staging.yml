@@ -1,0 +1,59 @@
+---
+
+name: "3_deploy_ami"
+description:  "[3] deploy application AMI to staging environment"
+runner_type: "local-shell-script"
+entry_point: "lib/ansible-playbook-deploy.sh"
+enabled: true
+parameters:
+  env:
+    description: "working environment for ansible run"
+    default:
+      ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
+    immutable: true
+
+  cwd:
+    description: "working directory where the command will be executed in eg. chdir"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+
+  playbook:
+    description: "ansible playbook to trigger"
+    type: string
+    immutable: true
+    default: 3-deploy.yml
+    position: 0
+
+  environment:
+    description: "target infrastructure environment"
+    type: string
+    immutable: true
+    default: "staging"
+    position: 1
+
+  stack:
+    description: "target application stack"
+    type: string
+    required: true
+    enum:
+      - "boxed-admin"
+      - "boxed-search"
+      - "boxed-smartlink"
+      - "boxed-imageupload"
+      - "boxed-twilio"
+    position: 2
+
+  layer:
+    description: "target stack layer"
+    type: string
+    immutable: true
+    default: app
+    position: 3
+
+  timeout:
+    description: "timeout"
+    type: integer
+    # 20 minutes
+    default: 1200

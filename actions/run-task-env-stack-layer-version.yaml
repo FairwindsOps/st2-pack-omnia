@@ -1,0 +1,65 @@
+---
+
+name: "run_task_stack_layer_version_repo"
+description:  "Run Omnia Playbooks With Specific Branch or SHA"
+runner_type: "local-shell-script"
+entry_point: "lib/ansible-env-stack-layer-version.sh"
+enabled: true
+parameters:
+  env:
+    description: "working environment for ansible run"
+    default:
+      ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
+    immutable: true
+
+  cwd:
+    description: "Working directory where the command will be executed in eg. chdir"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+
+  playbook:
+    description: "anible playbook to trigger"
+    type: string
+    required: true
+    position: 0
+
+  environment:
+    description: "target infrastructure environment"
+    type: string
+    required: true
+    enum:
+      - "staging"
+      - "prod"
+    position: 1
+
+  stack:
+    description: "target application stack"
+    type: string
+    required: true
+    enum:
+      - "boxed-admin"
+      - "boxed-search"
+      - "boxed-smartlink"
+      - "boxed-imageupload"
+      - "boxed-twilio"
+    position: 2
+
+  layer:
+    type: string
+    description: "target stack layer"
+    required: true
+    position: 3
+
+  version:
+    type: string
+    description: "target version"
+    required: true
+    position: 4
+
+  timeout:
+    description: "timeout"
+    type: integer
+    # 20 minutes
+    default: 1200

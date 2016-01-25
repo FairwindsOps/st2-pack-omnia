@@ -1,0 +1,66 @@
+---
+
+name: "4_release_ami"
+description:  "[4] release application AMI to production environment"
+runner_type: "local-shell-script"
+entry_point: "lib/ansible-playbook-release.sh"
+enabled: true
+parameters:
+  env:
+    description: "working environment for ansible run"
+    default:
+      ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+      AWS_DEFAULT_REGION: "us-east-1"
+    immutable: true
+
+  cwd:
+    description: "working directory where the command will be executed in eg. chdir"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+
+  playbook:
+    description: "ansible playbook to trigger"
+    type: string
+    immutable: true
+    default: 4-release.yml
+    position: 0
+
+  previous_environment:
+    description: "previous infrastructure environment"
+    type: string
+    immutable: true
+    default: "staging"
+    position: 1
+
+  environment:
+    description: "target infrastructure environment"
+    type: string
+    immutable: true
+    default: "prod"
+    position: 2
+
+  stack:
+    description: "target application stack"
+    type: string
+    required: true
+    enum:
+      - "boxed-admin"
+      - "boxed-search"
+      - "boxed-smartlink"
+      - "boxed-imageupload"
+      - "boxed-twilio"
+    position: 3
+
+  layer:
+    description: "target stack layer"
+    type: string
+    immutable: true
+    default: app
+    position: 4
+
+  timeout:
+    description: "timeout"
+    type: integer
+    # 20 minutes
+    default: 1200
