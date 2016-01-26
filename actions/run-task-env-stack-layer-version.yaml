@@ -41,6 +41,7 @@ parameters:
     enum:
       - "boxed-admin"
       - "boxed-search"
+      - "boxed-smartboxed"
       - "boxed-smartlink"
       - "boxed-imageupload"
       - "boxed-twilio"
