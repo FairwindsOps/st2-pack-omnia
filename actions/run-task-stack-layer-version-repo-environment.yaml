@@ -1,9 +1,15 @@
 ---
 
-name: "run_task_stack_layer_version_repo"
-description:  "run_task_stack_layer_version_repo"
+# st2 run st2-chatops-aliases.run_task_stack_layer_version_repo \
+# playbook=run-migrations.yml
+# stack=app layer=web version=develop \
+# app_repo='ssh://git@github.com/idyllicsoftware/GMR.git'
+# environment=[dev|stg|prod]
+
+name: "run_task_stack_layer_version_repo_environment"
+description:  "Run a task with task with setting stack, layer, version, repo, environment variables"
 runner_type: "local-shell-script"
-entry_point: "lib/ansible-stack-layer-version-repo.sh"
+entry_point: "lib/ansible-stack-layer-version-repo-environment.sh"
 enabled: true
 parameters:
   env:
@@ -51,3 +57,9 @@ parameters:
     description: "app_repo"
     required: true
     position: 4
+
+  environment:
+    type: string
+    description: "omnia environment"
+    required: true
+    position: 5
