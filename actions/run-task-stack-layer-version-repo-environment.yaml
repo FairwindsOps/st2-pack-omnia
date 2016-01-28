@@ -1,6 +1,6 @@
 ---
 
-# st2 run st2-chatops-aliases.run_task_stack_layer_version_repo \
+# st2 run st2-pack-omnia.run_task_stack_layer_version_repo \
 # playbook=run-migrations.yml
 # stack=app layer=web version=develop \
 # app_repo='ssh://git@github.com/idyllicsoftware/GMR.git'

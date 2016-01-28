@@ -1,7 +1,7 @@
 ### Place information about your pack version here.
 ---
-name: st2-chatops-aliases
-description: Pack with sample Ansible ChatOps aliases
+name: st2-pack-omnia
+description: Pack with ReactiveOps Omnia shared resources
 version: 0.1.0
-author: StackStorm Stanley
-email: stanley@stackstorm.com
+author: ReactiveOps
+email: ops@ReactiveOps.com
