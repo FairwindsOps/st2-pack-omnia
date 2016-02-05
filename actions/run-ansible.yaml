@@ -1,0 +1,51 @@
+---
+
+name: "run_ansible"
+description:  "Run ansible"
+runner_type: "local-shell-script"
+entry_point: "lib/ansible-playbook-runner.sh"
+enabled: true
+parameters:
+  env:
+    default:
+      ANSIBLE_CONFIG: "/opt/omnia/infrastructure/config/remote_ansible.cfg"
+
+  cwd:
+    description: "Working directory where the command will be executed in eg. chdir"
+    type: string
+    default: "/opt/omnia/infrastructure/tasks"
+    immutable: true
+
+  playbook:
+    type: string
+    description: "playbook file"
+    required: true
+    position: 0
+
+  firstrun:
+    type: string
+    required: false
+
+  branch:
+    type: string
+    required: false
+
+  version:
+    type: string
+    required: false
+
+  app_repo:
+    type: string
+    required: false
+
+
+  kwarg_op:
+    type: "string"
+    immutable: true
+    default: ''
+
+  timeout:
+    description: "timeout"
+    type: integer
+    # 20 minutes
+    default: 1200
