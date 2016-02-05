@@ -4,4 +4,3 @@ action_ref: "st2-pack-omnia.run_ansible"
 description: "Run ansible"
 formats:
   - run ansible {{ playbook }}
-  - run ansible {{ playbook }} firstrun {{ firstrun }}
