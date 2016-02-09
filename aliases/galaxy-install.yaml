@@ -1,6 +1,0 @@
----
-name: "galaxy_install"
-action_ref: "st2-pack-omnia.galaxy_install"
-description: "galaxy install"
-formats:
-  - galaxy install

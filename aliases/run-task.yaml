@@ -1,6 +1,0 @@
----
-name: "run_task"
-action_ref: "st2-pack-omnia.run_task"
-description: "Run task"
-formats:
-  - play task {{ playbook }}
