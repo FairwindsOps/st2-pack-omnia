@@ -1,0 +1,6 @@
+---
+name: "playbook"
+action_ref: "st2-pack-omnia.playbook"
+description: "Run ansible playbook"
+formats:
+  - "ansible {{ playbook }}"
