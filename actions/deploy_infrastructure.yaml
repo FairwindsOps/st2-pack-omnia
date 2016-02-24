@@ -1,7 +1,7 @@
 ---
 
 name: "deploy_infrastructure"
-description:  "Run Omnia tasks"
+description:  "Deploy infrastructure repository via ansible-playbook deploy-infrastructure-repo.yml"
 runner_type: "local-shell-cmd"
 enabled: true
 parameters:

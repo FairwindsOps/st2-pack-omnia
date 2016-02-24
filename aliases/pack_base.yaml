@@ -4,9 +4,3 @@ action_ref: "st2-pack-omnia.pack_base"
 description: "Run pack base task"
 formats:
   - "pack base {{first_run=no}}"
-
-
-
-
-# Instead of ansible.playbook, copy that action and customize it
-# cp packs/ansible/actions/playbook.yml  packs/omnia/actions/playbook.yml 
