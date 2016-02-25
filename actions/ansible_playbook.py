@@ -35,7 +35,10 @@ class AnsiblePlaybookRunner(AnsibleBaseRunner):
         '--syntax_check': '--syntax-check',
         '--vault_password_file': '--vault-password-file',
         '--first_run': '-e first_run',
-        '--branch': '-e branch'
+        '--version': '-e version'
+        '--stack': '-e stack'
+        '--layer': '-e layer'
+
     }
 
 if __name__ == '__main__':
