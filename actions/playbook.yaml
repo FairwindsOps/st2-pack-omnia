@@ -25,7 +25,13 @@ parameters:
     default: false
 
 # extra vars:
-  branch:
+  version:
+    required: false
+    type: string
+  stack:
+    required: false
+    type: string
+  layer:
     required: false
     type: string
 
