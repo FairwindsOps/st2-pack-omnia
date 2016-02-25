@@ -148,6 +148,6 @@ parameters:
       - vv
       - vvv
       - vvvv
-  version:
-    description: "Show ansible version number and exit"
-    type: boolean
+  # version:
+  #   description: "Show ansible version number and exit"
+  #   type: boolean
