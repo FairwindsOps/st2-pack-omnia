@@ -1,6 +1,6 @@
 ---
-name: "deploy_infrastructure"
-description: "deploy infrastructure"
+name: "deploy"
+description: "deploy"
 runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
@@ -21,7 +21,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "deploy-infrastructure.yml"
+    default: "deploy.yml"
     required: true
 
   sudo:
@@ -31,8 +31,23 @@ parameters:
 
 
 # Passing extra_vars as st2 parameters:
-  branch:
-    description: "git branch, or sha"
+  environment:
+    description: "environment extra var for ansible"
+    type: string
+    required: false
+
+  stack:
+    description: "stack"
+    type: string
+    required: false
+
+  sha:
+    description: "git sha"
+    type: string
+    required: false
+
+  run_migrations:
+    description: "run migrations"
     type: string
     required: false
 

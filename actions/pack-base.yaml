@@ -1,10 +1,13 @@
 ---
-name: "deploy_infrastructure"
-description: "deploy infrastructure"
+name: "pack-base"
+description: "Run pack base"
 runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
 parameters:
+
+
+# Begin customization
 
   env:
     default:
@@ -21,7 +24,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "deploy-infrastructure.yml"
+    default: "0-pack-base.yml"
     required: true
 
   sudo:
@@ -31,10 +34,12 @@ parameters:
 
 
 # Passing extra_vars as st2 parameters:
-  branch:
-    description: "git branch, or sha"
+  first_run:
+    description: "first_run"
     type: string
     required: false
+    default: 'no'
+
 
 # End customization
 

@@ -1,0 +1,6 @@
+---
+name: "pack-code"
+action_ref: "st2-pack-omnia.pack-code"
+description: "Run pack code task"
+formats:
+  - "pack code component {{ component }} stack {{ stack }} sha {{ sha }}"

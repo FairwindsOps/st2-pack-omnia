@@ -1,6 +1,6 @@
 ---
-name: "deploy_infrastructure"
-description: "deploy infrastructure"
+name: "pack-and-release-qa"
+description: "pack and release qa"
 runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
@@ -21,7 +21,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "deploy-infrastructure.yml"
+    default: "pack-and-release-qa.yml"
     required: true
 
   sudo:
@@ -31,8 +31,13 @@ parameters:
 
 
 # Passing extra_vars as st2 parameters:
+  stack:
+    description: "stack"
+    type: string
+    required: false
+
   branch:
-    description: "git branch, or sha"
+    description: "branch"
     type: string
     required: false
 
@@ -54,7 +59,7 @@ parameters:
   timeout:
     description: "Action timeout in seconds. Action will get killed if it doesn't finish in timeout seconds"
     type: integer
-    default: 900
+    default: 1800
 
   background:
     description: "Fork in Background asynchronously for X seconds [-B]"

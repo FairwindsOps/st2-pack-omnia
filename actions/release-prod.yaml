@@ -1,6 +1,6 @@
 ---
-name: "deploy_infrastructure"
-description: "deploy infrastructure"
+name: "release-prod"
+description: "release prod"
 runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
@@ -21,7 +21,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "deploy-infrastructure.yml"
+    default: "release-prod.yml"
     required: true
 
   sudo:
@@ -31,8 +31,8 @@ parameters:
 
 
 # Passing extra_vars as st2 parameters:
-  branch:
-    description: "git branch, or sha"
+  stack:
+    description: "stack"
     type: string
     required: false
 

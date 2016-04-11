@@ -37,8 +37,13 @@ class AnsiblePlaybookRunner(AnsibleBaseRunner):
         '--first_run': '-e first_run',
         '--version': '-e version',
         '--stack': '-e stack',
-        '--layer': '-e layer'
-
+        '--layer': '-e layer',
+        '--component': '-e component',
+        '--sha': '-e sha',
+        '--branch': '-e branch',
+        '--environment': '-e env',
+        '--run_migrations': '-e run_migrations',
+        '--ami_id': '-e ami_id',
     }
 
 if __name__ == '__main__':

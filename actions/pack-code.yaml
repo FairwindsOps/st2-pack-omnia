@@ -1,10 +1,14 @@
 ---
-name: "deploy_infrastructure"
-description: "deploy infrastructure"
+name: "pack-code"
+description: "Run pack code"
 runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
 parameters:
+
+##
+# Begin customization
+##
 
   env:
     default:
@@ -21,7 +25,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "deploy-infrastructure.yml"
+    default: "2-pack-code.yml"
     required: true
 
   sudo:
@@ -29,15 +33,23 @@ parameters:
     type: boolean
     default: false
 
-
 # Passing extra_vars as st2 parameters:
-  branch:
-    description: "git branch, or sha"
+  component:
+    description: "component"
+    type: string
+    required: false
+  stack:
+    description: "stack"
+    type: string
+    required: false
+  sha:
+    description: "sha"
     type: string
     required: false
 
+##
 # End customization
-
+##
 
   kwarg_op:
     description: "Lock operator type to '--'"

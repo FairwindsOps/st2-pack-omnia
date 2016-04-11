@@ -1,0 +1,6 @@
+---
+name: "pack-prep"
+action_ref: "st2-pack-omnia.pack-prep"
+description: "Run pack prep task"
+formats:
+  - "pack prep"
