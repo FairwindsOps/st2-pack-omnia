@@ -59,7 +59,7 @@ parameters:
   timeout:
     description: "Action timeout in seconds. Action will get killed if it doesn't finish in timeout seconds"
     type: integer
-    default: 1800
+    default: 2500
 
   background:
     description: "Fork in Background asynchronously for X seconds [-B]"
