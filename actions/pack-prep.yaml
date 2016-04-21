@@ -25,7 +25,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "1-pack-prep.yml"
+    default: "pack-prep.yml"
     required: true
 
   sudo:

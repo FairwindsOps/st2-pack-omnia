@@ -24,7 +24,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "0-pack-base.yml"
+    default: "pack-base.yml"
     required: true
 
   sudo:
