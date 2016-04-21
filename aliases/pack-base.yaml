@@ -1,0 +1,6 @@
+---
+name: "pack-base"
+action_ref: "st2-pack-omnia.pack-base"
+description: "Run pack base task"
+formats:
+  - "pack base {{first_run=no}}"

@@ -1,7 +1,7 @@
 ---
 
 name: "galaxy_install"
-description:  "Galaxy install ansiblr requirements"
+description:  "Galaxy install ansible requirements"
 runner_type: "local-shell-cmd"
 enabled: true
 parameters:

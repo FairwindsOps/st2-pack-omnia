@@ -1,0 +1,6 @@
+---
+name: "release-prod"
+action_ref: "st2-pack-omnia.release-prod"
+description: "release prod"
+formats:
+  - "release to production stack {{ stack }}"

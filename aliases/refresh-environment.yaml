@@ -1,0 +1,6 @@
+---
+name: "refresh-environment"
+action_ref: "st2-pack-omnia.refresh-environment"
+description: "refresh-environment"
+formats:
+  - "refresh environment {{ environment }} stack {{ stack }} ami_id {{ ami_id }}"
