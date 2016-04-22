@@ -3,4 +3,4 @@ name: "deploy"
 action_ref: "st2-pack-omnia.deploy"
 description: "deploy"
 formats:
-  - "deploy environment {{ environment }} stack {{ stack }} sha {{ sha }} {{run_migrations=true}}"
+  - "deploy environment {{ environment }} stack {{ stack }} sha {{ sha }}"
