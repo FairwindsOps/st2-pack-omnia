@@ -1,6 +1,6 @@
 ---
-name: "release-prod"
-action_ref: "st2-pack-omnia.release-prod"
-description: "release prod"
+name: "pack-and-release-qa"
+action_ref: "st2-pack-omnia.pack-and-release-qa"
+description: "pack and release qa"
 formats:
-  - "release to production stack {{ stack }}"
+  - "pack and release to qa stack {{ stack }} branch {{ branch }}"
