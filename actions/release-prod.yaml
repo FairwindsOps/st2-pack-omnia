@@ -36,6 +36,11 @@ parameters:
     type: string
     required: false
 
+  sha:
+    description: "sha"
+    type: string
+    required: false
+
 # End customization
 
 
