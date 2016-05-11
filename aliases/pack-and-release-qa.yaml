@@ -1,6 +1,0 @@
----
-name: "pack-and-release-qa"
-action_ref: "st2-pack-omnia.pack-and-release-qa"
-description: "pack and release qa"
-formats:
-  - "pack and release to qa stack {{ stack }} branch {{ branch }}"

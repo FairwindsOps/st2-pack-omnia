@@ -1,6 +1,6 @@
 ---
-name: "pack-and-release-qa"
-description: "pack and release qa"
+name: "pack-and-release"
+description: "pack and release"
 runner_type: "local-shell-script"
 entry_point: "ansible_playbook.py"
 enabled: true
@@ -21,7 +21,7 @@ parameters:
     type: string
     position: 0
     immutable: true
-    default: "pack-and-release-qa.yml"
+    default: "pack-and-release.yml"
     required: true
 
   sudo:
@@ -31,6 +31,11 @@ parameters:
 
 
 # Passing extra_vars as st2 parameters:
+  environment:
+    description: "environment extra var for ansible"
+    type: string
+    required: true
+
   stack:
     description: "stack"
     type: string

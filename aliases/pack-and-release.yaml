@@ -1,0 +1,6 @@
+---
+name: "pack-and-release"
+action_ref: "st2-pack-omnia.pack-and-release"
+description: "pack and release to the specified environment"
+formats:
+  - "pack and release to env {{ environment }} stack {{ stack }} branch {{ branch }}"
