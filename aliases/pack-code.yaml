@@ -4,3 +4,5 @@ action_ref: "st2-pack-omnia.pack-code"
 description: "Run pack code task"
 formats:
   - "pack code component {{ component }} stack {{ stack }} sha {{ sha }}"
+  - "pack code component {{ component }} stack {{ stack }} branch {{ sha }}"
+  - "pack code component {{ component }} stack {{ stack }} ref {{ sha }}"

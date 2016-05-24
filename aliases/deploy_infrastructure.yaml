@@ -3,4 +3,7 @@ name: "deploy_infrastructure"
 action_ref: "st2-pack-omnia.deploy_infrastructure"
 description: "deploy infrastructure"
 formats:
-  - deploy infrastructure
+  - "deploy infrastructure"
+  - "deploy infrastructure sha {{ branch }}"
+  - "deploy infrastructure branch {{ branch }}"
+  - "deploy infrastructure ref {{ branch }}"
