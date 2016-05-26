@@ -4,6 +4,4 @@ action_ref: "st2-pack-omnia.release-prod"
 description: "release prod"
 formats:
   - "release to production stack {{ stack }} sha {{ sha }}"
-  - "release to production stack {{ stack }} branch {{ sha }}"
-  - "release to production stack {{ stack }} ref {{ sha }}"
   - "release to production stack {{ stack }}"
