@@ -1,7 +1,7 @@
 ### Place information about your pack version here.
 ---
 name: st2-pack-omnia
-description: Pack with ReactiveOps Omnia shared resources
+description: Pack with Fairwinds Omnia shared resources
 version: 0.1.0
-author: ReactiveOps
-email: ops@ReactiveOps.com
+author: Fairwinds
+email: ops@Fairwinds.com
